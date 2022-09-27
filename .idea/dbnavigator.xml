@@ -32,7 +32,7 @@
       <console name="Connection" type="STANDARD" schema="information_schema" session="Main" />
     </connection>
     <connection id="38fdb4fd-9f16-47ea-bb1b-2d6d2550da8f">
-      <console name="Connection 1" type="STANDARD" schema="" session="Main" />
+      <console name="Connection 1" type="STANDARD" schema="" session="Main"><![CDATA[select * from credit_request_entity]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
