@@ -1,6 +1,7 @@
 package ru.netology.page;
 
 import com.codeborne.selenide.SelenideElement;
+import lombok.val;
 
 import java.time.Duration;
 import java.util.List;
@@ -21,6 +22,16 @@ public class FormPage {
     SelenideElement year = input.get(2);
     SelenideElement cardOwner = input.get(3);
     SelenideElement cvcOrCvvNumber = input.get(4);
+
+    public int checkAmount() {
+        String amountStart = "Всего ";
+        String amountFinish = " руб.!";
+        String text = $x("//*[contains(text(),'руб')]").getText();
+        val start = text.indexOf(amountStart);
+        val finish = text.indexOf(amountFinish);
+        val value = text.substring(start + amountStart.length(), finish).replaceAll(" ", "");
+        return Integer.parseInt(value);
+    }
 
     public void buyForYourMoney() {
         open(appURL + ":" + appPORT);
@@ -83,4 +94,6 @@ public class FormPage {
     public void pushСontinueButton() {
         $$(".button__content").find(exactText("Продолжить")).click();
     }
+
+
 }

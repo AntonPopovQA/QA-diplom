@@ -14,19 +14,14 @@
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plan.md" beforeDir="false" afterPath="$PROJECT_DIR$/Plan.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/ru/netology/data/DBUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/ru/netology/data/DBUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/tests/FormPayment.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/tests/FormPayment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/tests.FormPayment.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/tests.FormPayment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/tests.FormPayment.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/tests.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/tests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-tests.FormPayment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-tests.FormPayment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-tests.FormPayment.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/data/DBUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/data/DBUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/page/FormPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/page/FormPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/FormPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/FormPayment.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -86,8 +81,8 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.FormPayment.shouldPayByApprovedCardStatusInDB">
-    <configuration name="FormPayment.shouldPayByApprovedCard (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.FormPayment.shouldNoPayByStrangerCardStatusInDB">
+    <configuration name="FormPayment.shouldApprovedPayAmount" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -100,7 +95,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tests.FormPayment.shouldPayByApprovedCard&quot;" />
+            <option value="&quot;tests.FormPayment.shouldApprovedPayAmount&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -110,7 +105,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="FormPayment.shouldPayByApprovedCardStatusInDB" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="FormPayment.shouldNoPayByDeclidedCardStatusInDB" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -123,7 +118,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tests.FormPayment.shouldPayByApprovedCardStatusInDB&quot;" />
+            <option value="&quot;tests.FormPayment.shouldNoPayByDeclidedCardStatusInDB&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -133,7 +128,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="FromCreditPayment.shouldNoPayByDeclidedCardInCreditStatusInDB" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="FormPayment.shouldNoPayByStrangerCardStatusInDB" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -146,7 +141,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tests.FromCreditPayment.shouldNoPayByDeclidedCardInCreditStatusInDB&quot;" />
+            <option value="&quot;tests.FormPayment.shouldNoPayByStrangerCardStatusInDB&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -156,7 +151,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="FromCreditPayment.shouldPayByApprovedCardInCreditCVCCVVEmpty" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="FromCreditPayment.shouldApprovedPayAmount" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -169,7 +164,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tests.FromCreditPayment.shouldPayByApprovedCardInCreditCVCCVVEmpty&quot;" />
+            <option value="&quot;tests.FromCreditPayment.shouldApprovedPayAmount&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -204,11 +199,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.FormPayment.shouldPayByApprovedCardStatusInDB" />
-        <item itemvalue="Gradle.FormPayment.shouldPayByApprovedCard (1)" />
+        <item itemvalue="Gradle.FormPayment.shouldNoPayByStrangerCardStatusInDB" />
+        <item itemvalue="Gradle.FromCreditPayment.shouldApprovedPayAmount" />
+        <item itemvalue="Gradle.FormPayment.shouldApprovedPayAmount" />
+        <item itemvalue="Gradle.FormPayment.shouldNoPayByDeclidedCardStatusInDB" />
         <item itemvalue="Gradle.FromCreditPayment.shouldPayByApprovedCardInCreditStatusInDB" />
-        <item itemvalue="Gradle.FromCreditPayment.shouldNoPayByDeclidedCardInCreditStatusInDB" />
-        <item itemvalue="Gradle.FromCreditPayment.shouldPayByApprovedCardInCreditCVCCVVEmpty" />
       </list>
     </recent_temporary>
   </component>

@@ -8,8 +8,12 @@ import ru.netology.data.DBUtils;
 import ru.netology.data.Status;
 import ru.netology.page.FormPage;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 
 public class FormPayment {
+
     private FormPage formPage;
 
     @BeforeEach
@@ -147,7 +151,7 @@ public class FormPayment {
         formPage.checkMessageWrongFormat();
     }
 
-    @Test // Баг № 4, неверное описание текста ошибки, должно быть "Поле обязательно для заполнения"
+    @Test // Баг № 3, неверное описание текста ошибки, должно быть "Поле обязательно для заполнения"
     @DisplayName("Оплата картой со статусом APPROVED, обычная покупка, пустые данные в поле Номер карты")
     @SneakyThrows
     void shouldPayByApprovedCardNumberCardEmpty() {
@@ -161,7 +165,7 @@ public class FormPayment {
         formPage.checkMessageRequiredField();
     }
 
-    @Test // Баг № 5, неверное описание текста ошибки, должно быть "Истек срок действия карты"
+    @Test // Баг № 4, неверное описание текста ошибки, должно быть "Истек срок действия карты"
     @DisplayName("Оплата картой со статусом APPROVED, обычная покупка, введение невалидных данных в поле Месяц с введением предыдущего месяца")
     @SneakyThrows
     void shouldPayByApprovedCardMonthFieldInCorrectMonth() {
@@ -175,7 +179,7 @@ public class FormPayment {
         formPage.checkMessageOverDate();
     }
 
-    @Test // Баг № 6, неверное описание текста ошибки, должно быть "Неверный формат"
+    @Test // Баг № 5, неверное описание текста ошибки, должно быть "Неверный формат"
     @DisplayName("Оплата картой со статусом APPROVED, обычная покупка, введение невалидных данных в поле Месяц с использованием некорректного значения")
     @SneakyThrows
     void shouldPayByApprovedCardMonthFieldInCorrect() {
@@ -217,7 +221,7 @@ public class FormPayment {
         formPage.checkMessageWrongFormat();
     }
 
-    @Test // Баг № 7, неверное описание текста ошибки, должно быть "Поле обязательно для заполнения"
+    @Test // Баг № 3, неверное описание текста ошибки, должно быть "Поле обязательно для заполнения"
     @DisplayName("Оплата картой со статусом APPROVED, обычная покупка, пустые данные в поле Месяц")
     @SneakyThrows
     void shouldPayByApprovedCardMonthEmpty() {
@@ -287,7 +291,7 @@ public class FormPayment {
         formPage.checkMessageWrongFormat();
     }
 
-    @Test // Баг № 8, неверное описание текста ошибки, должно быть "Поле обязательно для заполнения"
+    @Test // Баг № 3, неверное описание текста ошибки, должно быть "Поле обязательно для заполнения"
     @DisplayName("Оплата картой со статусом APPROVED, обычная покупка, пустые данные в поле Год")
     @SneakyThrows
     void shouldPayByApprovedCardYearEmpty() {
@@ -301,7 +305,7 @@ public class FormPayment {
         formPage.checkMessageRequiredField();
     }
 
-    @Test // Баг № 9, отсутствует появление ошибки "Неверный формат"
+    @Test // Баг № 6, отсутствует появление ошибки "Неверный формат"
     @DisplayName("Оплата картой со статусом APPROVED, обычная покупка, введение невалидных данных в поле Владелец с использованием некорректного значения")
     @SneakyThrows
     void shouldPayByApprovedCardOwnerFieldInCorrect() {
@@ -315,7 +319,7 @@ public class FormPayment {
         formPage.checkMessageWrongFormat();
     }
 
-    @Test // Баг № 10, отсутствует появление ошибки "Неверный формат"
+    @Test // Баг № 7, отсутствует появление ошибки "Неверный формат"
     @DisplayName("Оплата картой со статусом APPROVED, обычная покупка, введение невалидных данных в поле Владелец с использованием запрещенных символов")
     @SneakyThrows
     void shouldPayByApprovedCardOwnerFieldSymbol() {
@@ -386,7 +390,7 @@ public class FormPayment {
     }
 
     @Test
-    @DisplayName("Оплата картой со статусом APPROVED, обычная покупка, введение валидных данных с последующей проверкой данных в СУБД")
+    @DisplayName("Оплата картой со статусом APPROVED, обычная покупка, введение валидных данных с последующей проверкой статуса в СУБД")
     @SneakyThrows
     void shouldPayByApprovedCardStatusInDB() {
         formPage.buyForYourMoney();
@@ -400,10 +404,25 @@ public class FormPayment {
         DBUtils.checkPaymentStatus(Status.APPROVED);
     }
 
-    @Test // Баг № 11, в БД статус карты APPROVED
-    @DisplayName("Оплата картой со статусом DECLINED, обычная покупка, введение валидных данныхс последующей проверкой данных в СУБД")
+    @Test
+    @DisplayName("Оплата картой со статусом DECLINED, обычная покупка, введение валидных данныхс последующей проверкой статуса в СУБД")
     @SneakyThrows
     void shouldNoPayByDeclidedCardStatusInDB() {
+        formPage.buyForYourMoney();
+        formPage.setCardNumber("4444444444444442");
+        formPage.setCardMonth("10");
+        formPage.setCardYear("22");
+        formPage.setCardOwner("Антон Попов");
+        formPage.setCardCVV("999");
+        formPage.pushСontinueButton();
+        formPage.checkMessageSuccess();
+        DBUtils.checkPaymentStatus(Status.DECLINED);
+    }
+
+    @Test  // Баг № 8, стоимость на сайте не совпадает со стоимостью в БД
+    @DisplayName("Оплата картой со статусом APPROVED, обычная покупка, введение валидных данных с последующей проверкой суммы в СУБД")
+    @SneakyThrows
+    void shouldApprovedPayAmount() {
         formPage.buyForYourMoney();
         formPage.setCardNumber("4444444444444441");
         formPage.setCardMonth("10");
@@ -412,7 +431,9 @@ public class FormPayment {
         formPage.setCardCVV("999");
         formPage.pushСontinueButton();
         formPage.checkMessageSuccess();
-        DBUtils.checkPaymentStatus(Status.DECLINED);
+        assertTrue(DBUtils.checkEntityCount() == 5);
+        DBUtils.checkPaymentStatus(Status.APPROVED);
+        assertEquals(formPage.checkAmount(), DBUtils.getPayAmount());
     }
 }
 
