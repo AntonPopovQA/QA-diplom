@@ -22,13 +22,13 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">1</div>
+<div class="counter">56</div>
 <p>tests</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">0</div>
+<div class="counter">20</div>
 <p>failures</p>
 </div>
 </td>
@@ -40,7 +40,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">14.713s</div>
+<div class="counter">4m14.91s</div>
 <p>duration</p>
 </div>
 </td>
@@ -49,8 +49,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox success" id="successRate">
-<div class="percent">100%</div>
+<div class="infoBox failures" id="successRate">
+<div class="percent">64%</div>
 <p>successful</p>
 </div>
 </td>
@@ -60,10 +60,98 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Classes</a>
+<a href="#tab0">Failed tests</a>
+</li>
+<li>
+<a href="#tab1">Classes</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
+<h2>Failed tests</h2>
+<ul class="linkList">
+<li>
+<a href="../classes/tests.FormPayment.html">FormPayment</a>.
+<a href="../classes/tests.FormPayment.html#shouldApprovedPayAmount()">Оплата картой со статусом APPROVED, обычная покупка, введение валидных данных с последующей проверкой суммы в СУБД</a>
+</li>
+<li>
+<a href="../classes/tests.FormPayment.html">FormPayment</a>.
+<a href="../classes/tests.FormPayment.html#shouldNoPayByDeclinedCard()">Оплата картой со статусом DECLINED, обычная оплата, введение валидных данных</a>
+</li>
+<li>
+<a href="../classes/tests.FormPayment.html">FormPayment</a>.
+<a href="../classes/tests.FormPayment.html#shouldNoPayByUnknownCard()">Оплата неизвестной картой, обычная оплата, введение валидных данных, за исключением номера карты</a>
+</li>
+<li>
+<a href="../classes/tests.FormPayment.html">FormPayment</a>.
+<a href="../classes/tests.FormPayment.html#shouldPayByApprovedCardMonthEmpty()">Оплата картой со статусом APPROVED, обычная покупка, пустые данные в поле Месяц</a>
+</li>
+<li>
+<a href="../classes/tests.FormPayment.html">FormPayment</a>.
+<a href="../classes/tests.FormPayment.html#shouldPayByApprovedCardMonthFieldInCorrect()">Оплата картой со статусом APPROVED, обычная покупка, введение невалидных данных в поле Месяц с использованием некорректного значения</a>
+</li>
+<li>
+<a href="../classes/tests.FormPayment.html">FormPayment</a>.
+<a href="../classes/tests.FormPayment.html#shouldPayByApprovedCardMonthFieldInCorrectMonth()">Оплата картой со статусом APPROVED, обычная покупка, введение невалидных данных в поле Месяц с введением предыдущего месяца</a>
+</li>
+<li>
+<a href="../classes/tests.FormPayment.html">FormPayment</a>.
+<a href="../classes/tests.FormPayment.html#shouldPayByApprovedCardNumberCardEmpty()">Оплата картой со статусом APPROVED, обычная покупка, пустые данные в поле Номер карты</a>
+</li>
+<li>
+<a href="../classes/tests.FormPayment.html">FormPayment</a>.
+<a href="../classes/tests.FormPayment.html#shouldPayByApprovedCardOwnerFieldInCorrect()">Оплата картой со статусом APPROVED, обычная покупка, введение невалидных данных в поле Владелец с использованием некорректного значения</a>
+</li>
+<li>
+<a href="../classes/tests.FormPayment.html">FormPayment</a>.
+<a href="../classes/tests.FormPayment.html#shouldPayByApprovedCardOwnerFieldSymbol()">Оплата картой со статусом APPROVED, обычная покупка, введение невалидных данных в поле Владелец с использованием запрещенных символов</a>
+</li>
+<li>
+<a href="../classes/tests.FormPayment.html">FormPayment</a>.
+<a href="../classes/tests.FormPayment.html#shouldPayByApprovedCardYearEmpty()">Оплата картой со статусом APPROVED, обычная покупка, пустые данные в поле Год</a>
+</li>
+<li>
+<a href="../classes/tests.FromCreditPayment.html">FromCreditPayment</a>.
+<a href="../classes/tests.FromCreditPayment.html#shouldApprovedPayAmount()">Оплата картой со статусом APPROVED, покупка в кредит, введение валидных данных с последующей проверкой предоставленной суммы в СУБД</a>
+</li>
+<li>
+<a href="../classes/tests.FromCreditPayment.html">FromCreditPayment</a>.
+<a href="../classes/tests.FromCreditPayment.html#shouldNoPayByDeclinedCardInCredit()">Оплата картой со статусом DECLINED, покупка в кредит, введение валидных данных</a>
+</li>
+<li>
+<a href="../classes/tests.FromCreditPayment.html">FromCreditPayment</a>.
+<a href="../classes/tests.FromCreditPayment.html#shouldNoPayByUnknownCardInCredit()">Оплата неизвестной картой, покупка в кредит, введение валидных данных, за исключением номера карты</a>
+</li>
+<li>
+<a href="../classes/tests.FromCreditPayment.html">FromCreditPayment</a>.
+<a href="../classes/tests.FromCreditPayment.html#shouldPayByApprovedCardInCreditMonthEmpty()">Оплата картой со статусом APPROVED, покупка в кредит, пустые данные в поле Месяц</a>
+</li>
+<li>
+<a href="../classes/tests.FromCreditPayment.html">FromCreditPayment</a>.
+<a href="../classes/tests.FromCreditPayment.html#shouldPayByApprovedCardInCreditMonthFieldInCorrect()">Оплата картой со статусом APPROVED, покупка в кредит, введение невалидных данных в поле Месяц с использованием некорректного значения</a>
+</li>
+<li>
+<a href="../classes/tests.FromCreditPayment.html">FromCreditPayment</a>.
+<a href="../classes/tests.FromCreditPayment.html#shouldPayByApprovedCardInCreditMonthFieldInCorrectMonth()">Оплата картой со статусом APPROVED, покупка в кредит, введение невалидных данных в поле Месяц с введением предыдущего месяца</a>
+</li>
+<li>
+<a href="../classes/tests.FromCreditPayment.html">FromCreditPayment</a>.
+<a href="../classes/tests.FromCreditPayment.html#shouldPayByApprovedCardInCreditNumberCardEmpty()">Оплата картой со статусом APPROVED, покупка в кредит, пустые данные в поле Номер карты</a>
+</li>
+<li>
+<a href="../classes/tests.FromCreditPayment.html">FromCreditPayment</a>.
+<a href="../classes/tests.FromCreditPayment.html#shouldPayByApprovedCardInCreditOwnerFieldInCorrect()">Оплата картой со статусом APPROVED, покупка в кредит, введение невалидных данных в поле Владелец с использованием некорректного значения</a>
+</li>
+<li>
+<a href="../classes/tests.FromCreditPayment.html">FromCreditPayment</a>.
+<a href="../classes/tests.FromCreditPayment.html#shouldPayByApprovedCardInCreditOwnerFieldSymbol()">Оплата картой со статусом APPROVED, покупка в кредит, введение невалидных данных в поле Владелец с использованием запрещенных символов</a>
+</li>
+<li>
+<a href="../classes/tests.FromCreditPayment.html">FromCreditPayment</a>.
+<a href="../classes/tests.FromCreditPayment.html#shouldPayByApprovedCardInCreditYearEmpty()">Оплата картой со статусом APPROVED, покупка в кредит, пустые данные в поле Год</a>
+</li>
+</ul>
+</div>
+<div id="tab1" class="tab">
 <h2>Classes</h2>
 <table>
 <thread>
@@ -77,14 +165,24 @@
 </tr>
 </thread>
 <tr>
-<td class="success">
+<td class="failures">
 <a href="../classes/tests.FormPayment.html">FormPayment</a>
 </td>
-<td>1</td>
+<td>28</td>
+<td>10</td>
 <td>0</td>
+<td>2m12.64s</td>
+<td class="failures">64%</td>
+</tr>
+<tr>
+<td class="failures">
+<a href="../classes/tests.FromCreditPayment.html">FromCreditPayment</a>
+</td>
+<td>28</td>
+<td>10</td>
 <td>0</td>
-<td>14.713s</td>
-<td class="success">100%</td>
+<td>2m2.28s</td>
+<td class="failures">64%</td>
 </tr>
 </table>
 </div>
@@ -96,7 +194,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.4</a> at 1 окт. 2022 г., 18:31:04</p>
+<a href="http://www.gradle.org">Gradle 7.4</a> at 6 окт. 2022 г., 21:19:19</p>
 </div>
 </div>
 </body>
